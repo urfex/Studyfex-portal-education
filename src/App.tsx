@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Gamepad2, Maximize2, X, ChevronLeft, Star } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import gamesData from './games.json';
 import NoticeModal from './components/NoticeModal';
 
@@ -17,8 +17,13 @@ export default function App() {
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [favorites, setFavorites] = useState<string[]>(() => {
-    const saved = localStorage.getItem('studyfex-favorites');
-    return saved ? JSON.parse(saved) : [];
+    try {
+      const saved = localStorage.getItem('studyfex-favorites');
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      console.error('LocalStorage access failed:', e);
+      return [];
+    }
   });
   const [showFavorites, setShowFavorites] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -28,7 +33,11 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('studyfex-favorites', JSON.stringify(favorites));
+    try {
+      localStorage.setItem('studyfex-favorites', JSON.stringify(favorites));
+    } catch (e) {
+      console.error('LocalStorage save failed:', e);
+    }
   }, [favorites]);
 
   const categories = ['All', ...Array.from(new Set(games.map(g => g.category)))];

@@ -1,19 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { AlertCircle, X } from 'lucide-react';
 
 export default function NoticeModal() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const hasSeenNotice = localStorage.getItem('studyfex-notice-seen');
-    if (!hasSeenNotice) {
+    try {
+      const hasSeenNotice = localStorage.getItem('studyfex-notice-seen');
+      if (!hasSeenNotice) {
+        setIsVisible(true);
+      }
+    } catch (e) {
+      console.error('LocalStorage access failed:', e);
+      // In case of error, just show the notice
       setIsVisible(true);
     }
   }, []);
 
   const handleDismiss = () => {
-    localStorage.setItem('studyfex-notice-seen', 'true');
+    try {
+      localStorage.setItem('studyfex-notice-seen', 'true');
+    } catch (e) {
+      console.error('LocalStorage save failed:', e);
+    }
     setIsVisible(false);
   };
 
