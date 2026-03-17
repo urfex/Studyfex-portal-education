@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Ninja Obby Parkour</title>
+    <style>
+        html,
+        body {
+            background-image: url("https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/664x-main/Build/Build.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            background-color: black;
+        }
+
+        div#gameContainer {
+            background: transparent !important;
+            position: absolute;
+            top: 0px !important;
+            width: 100% !important;
+            height: 100% !important;
+            left: 0px !important;
+        }
+
+        div#gameContainer canvas {
+            position: absolute;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .loadingOut {
+            width: 250px;
+            position: fixed;
+            left: 50%;
+            top: calc(50% - 8px);
+            transform: translate(-50%);
+            border: 2px solid white;
+            height: 14px;
+            background: transparent;
+            z-index: 10;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: white;
+            width: 0%;
+        }
+
+        .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -250px;
+            width: 500px;
+            z-index: 5;
+        }
+
+        #orientation-warning {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: red;
+            color: white;
+            padding: 20px;
+            border: 2px solid white;
+            text-align: center;
+            z-index: 1000;
+        }
+
+         #orientation-image {
+            width: 125px;
+            height: 125px;
+            margin-top: 10px;
+            display: none;
+            position: fixed;
+            top: calc(50% - 150px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+    <img id="orientation-image" src="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/664x-main/TemplateData/Orientation/orientation.png" alt="Orientation">
+    <div id="orientation-warning">
+        <div>Please rotate your device to the correct mode.</div>
+    </div>
+    <div id="gameContainer">
+        <img src="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/664x-main/TemplateData/logo.png" class="centered" id="loading-logo">
+        <div class="loadingOut" id="loading-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <canvas id="unity-canvas" data-pixel-art="false"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/664x-main/Build/NinjaObbyParkourV3_H5.loader.js"></script>
+    <script>
+        var canvas = document.querySelector("#unity-canvas");
+        var progressBar = document.querySelector("#progress-bar");
+        var loadingLogo = document.querySelector("#loading-logo");
+        var loadingBarContainer = document.querySelector("#loading-bar-container");
+        var gameContainer = document.querySelector("#gameContainer");
+        var orientationWarning = document.querySelector("#orientation-warning");
+        var orientationImage = document.querySelector("#orientation-image");
+
+        var config = {
+            frameworkUrl: "https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/664x-main/Build/NinjaObbyParkourV3_H5.framework.js.unityweb",
+            codeUrl: "https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/664x-main/Build/NinjaObbyParkourV3_H5.wasm.unityweb",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "GameVGames",
+            productName: "Ninja Obby Parkour",
+            productVersion: "0.1.0",
+        };
+
+        function progressHandler(progress) {
+            var percent = progress * 100 + '%';
+            progressBar.style.width = percent;
+        }
+
+        (async () => {
+            const partUrls = [
+                "https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/664x-main/Build/NinjaObbyParkourV3_H5.data.unityweb.part000",
+                "https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/664x-main/Build/NinjaObbyParkourV3_H5.data.unityweb.part001",
+                "https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/664x-main/Build/NinjaObbyParkourV3_H5.data.unityweb.part002"
+            ];
+
+            console.log("🔄 Unity .data parçaları indiriliyor...");
+
+            try {
+                const parts = [];
+                for (const url of partUrls) {
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error(`Parça yüklenemedi: ${url}`);
+                    const buffer = await response.arrayBuffer();
+                    parts.push(buffer);
+                    console.log(`✅ ${url} yüklendi`);
+                }
+
+                const totalLength = parts.reduce((acc, b) => acc + b.byteLength, 0);
+                const combined = new Uint8Array(totalLength);
+                let offset = 0;
+                for (const part of parts) {
+                    combined.set(new Uint8Array(part), offset);
+                    offset += part.byteLength;
+                }
+
+                const blob = new Blob([combined], { type: "application/octet-stream" });
+                const blobUrl = URL.createObjectURL(blob);
+                config.dataUrl = blobUrl;
+
+                createUnityInstance(canvas, config, progressHandler).then((unityInstance) => {
+                    loadingLogo.style.display = "none";
+                    loadingBarContainer.style.display = "none";
+                }).catch((message) => {
+                    alert(message);
+                });
+            } catch (e) {
+                console.error("Error loading game data:", e);
+                alert("Failed to load game data. Please refresh.");
+            }
+        })();
+
+        function onResize() {
+            // Simple full screen resize
+            canvas.style.width = window.innerWidth + "px";
+            canvas.style.height = window.innerHeight + "px";
+        }
+
+        function isMobile() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+
+        function checkOrientation() {
+            if (!isMobile()) return;
+            
+            // Assuming landscape for this game based on typical Unity obby games
+            if (window.innerHeight > window.innerWidth) {
+                orientationWarning.style.display = 'block';
+                gameContainer.style.display = 'none';
+                orientationWarning.innerText = 'Please rotate your device to landscape mode.';
+                orientationImage.style.display = 'block';
+            } else {
+                orientationWarning.style.display = 'none';
+                gameContainer.style.display = 'block';
+                orientationImage.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('resize', function() {
+            onResize();
+            checkOrientation();
+        });
+
+        onResize();
+        checkOrientation();
+    </script>
+</body>
+</html>

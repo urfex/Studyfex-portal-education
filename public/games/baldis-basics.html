@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <base href="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/baldis-basics/">
+    <title>Baldi's Basics</title>
+    <link rel="stylesheet" href="TemplateData/style.css" />
+    <style>
+      body { margin: 0; background: #231f20; overflow: hidden; height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; }
+      #unityContainer { width: 100% !important; height: 100% !important; }
+      #gameContainer { width: 100% !important; height: 100% !important; }
+    </style>
+     <script>
+    window.fileMergerConfig = {
+      files: [
+        { name: 'baldi.data.unityweb', parts: 2 },
+        { name: 'baldi.wasm.code.unityweb', parts: 1 },
+        { name: 'baldi.wasm.framework.unityweb', parts: 1 },
+      ],
+      basePath: 'unity/',
+      debug: true
+    };
+  </script>
+    <script src="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/merge.js"></script>
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="baldi.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "baldi.json", {
+        onProgress: UnityProgress,
+        Module: {
+          onRuntimeInitialized: function () {
+            UnityProgress(gameInstance, "complete");
+          },
+        },
+      });
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer">
+        <div id="gameContainer"></div>
+      </div>
+    </div>
+  </body>
+</html>

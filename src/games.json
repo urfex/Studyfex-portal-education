@@ -1,0 +1,344 @@
+[
+  {
+    "id": "stickman-gta",
+    "title": "Stickman GTA City",
+    "iframeUrl": "/games/stickman-gta.html",
+    "category": "Action"
+  },
+  {
+    "id": "rocket-goal",
+    "title": "Rocket Goal",
+    "iframeUrl": "/games/rocket-goal.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "epstein-basics",
+    "title": "Jeffrey Epstein's Education and Kidnapping",
+    "iframeUrl": "/games/epstein-basics.html",
+    "category": "Horror"
+  },
+  {
+    "id": "indian-truck-simulator",
+    "title": "Indian Truck Simulator",
+    "iframeUrl": "/games/indian-truck-simulator.html",
+    "category": "Simulation"
+  },
+  {
+    "id": "idle-miner-tycoon",
+    "title": "Idle Miner Tycoon",
+    "iframeUrl": "/games/idle-miner-tycoon.html",
+    "category": "Simulation"
+  },
+  {
+    "id": "fnae",
+    "title": "Five Nights at Epstein's",
+    "iframeUrl": "/games/fnae.html",
+    "category": "Horror"
+  },
+  {
+    "id": "drift-hunters",
+    "title": "Drift Hunters",
+    "iframeUrl": "/games/drift-hunters.html",
+    "category": "Racing"
+  },
+  {
+    "id": "ant-art-tycoon",
+    "title": "Ant Art Tycoon",
+    "iframeUrl": "/games/ant-art-tycoon.html",
+    "category": "Simulation"
+  },
+  {
+    "id": "angry-birds",
+    "title": "Angry Birds",
+    "iframeUrl": "/games/angry-birds.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "airline-tycoon-idle",
+    "title": "Airline Tycoon Idle",
+    "iframeUrl": "/games/airline-tycoon-idle.html",
+    "category": "Simulation"
+  },
+  {
+    "id": "brawl-stars",
+    "title": "Brawl Stars",
+    "iframeUrl": "/games/clicker.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "red-ball-4",
+    "title": "Red Ball 4",
+    "iframeUrl": "/games/red-ball-4.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "retro-bowl",
+    "title": "Retro Bowl",
+    "iframeUrl": "/games/retro-bowl.html",
+    "category": "Sports"
+  },
+  {
+    "id": "drive-mad",
+    "title": "Drive Mad",
+    "iframeUrl": "/games/drive-mad.html",
+    "category": "Racing"
+  },
+  {
+    "id": "ragdoll-archers",
+    "title": "Ragdoll Archers",
+    "iframeUrl": "/games/ragdoll-archers.html",
+    "category": "Action"
+  },
+  {
+    "id": "crazy-cattle-3d",
+    "title": "CrazyCattle3D",
+    "iframeUrl": "/games/crazy-cattle-3d.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "monkey-mart",
+    "title": "Monkey Mart",
+    "iframeUrl": "/games/monkey-mart.html",
+    "category": "Simulation"
+  },
+  {
+    "id": "escape-road",
+    "title": "Escape Road",
+    "iframeUrl": "/games/escape-road.html",
+    "category": "Racing"
+  },
+  {
+    "id": "subway-surfers",
+    "title": "Subway Surfers",
+    "iframeUrl": "/games/subway-surfers.html",
+    "category": "Action"
+  },
+  {
+    "id": "steal-brainrot",
+    "title": "Steal a Brainrot",
+    "iframeUrl": "/games/steal-brainrot.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "skibidi-shooter",
+    "title": "Skibidi Shooter",
+    "iframeUrl": "/games/skibidi-shooter.html",
+    "category": "Action"
+  },
+  {
+    "id": "skibidi-backrooms",
+    "title": "Skibidi Backrooms",
+    "iframeUrl": "/games/skibidi-backrooms.html",
+    "category": "Horror"
+  },
+  {
+    "id": "short-life",
+    "title": "Short Life",
+    "iframeUrl": "/games/short-life.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "sandbox-city",
+    "title": "Sandbox City",
+    "iframeUrl": "/games/sandbox-city.html",
+    "category": "Action"
+  },
+  {
+    "id": "russian-sandbox",
+    "title": "Russian Sandbox",
+    "iframeUrl": "/games/russian-sandbox.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "rooftop-sniper",
+    "title": "Rooftop Sniper",
+    "iframeUrl": "/games/rooftop-sniper.html",
+    "category": "Action"
+  },
+  {
+    "id": "plants-vs-zombies",
+    "title": "Plants vs Zombies",
+    "iframeUrl": "/games/plants-vs-zombies.html",
+    "category": "Strategy"
+  },
+  {
+    "id": "pixel-shooter",
+    "title": "Pixel Shooter",
+    "iframeUrl": "/games/pixel-shooter.html",
+    "category": "Action"
+  },
+  {
+    "id": "paper-io",
+    "title": "Paper.io",
+    "iframeUrl": "/games/paper-io.html",
+    "category": "IO"
+  },
+  {
+    "id": "obby-99-lose",
+    "title": "Obby But 99% Will Lose",
+    "iframeUrl": "/games/obby-99-lose.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "1-jump-per-click",
+    "title": "1 Jump Per Click",
+    "iframeUrl": "/games/1-jump-per-click.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "noob-miner",
+    "title": "Noob Miner",
+    "iframeUrl": "/games/noob-miner.html",
+    "category": "Simulation"
+  },
+  {
+    "id": "ninja-obby-parkour",
+    "title": "Ninja Obby Parkour",
+    "iframeUrl": "/games/ninja-obby-parkour.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "motox3m",
+    "title": "MotoX3M",
+    "iframeUrl": "/games/motox3m.html",
+    "category": "Racing"
+  },
+  {
+    "id": "lucky-block-obby",
+    "title": "Lucky Block Obby",
+    "iframeUrl": "/games/lucky-block-obby.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "jetpack-joyride",
+    "title": "Jetpack Joyride",
+    "iframeUrl": "/games/jetpack-joyride.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "jailbreak-obby",
+    "title": "Jailbreak Obby",
+    "iframeUrl": "/games/jailbreak-obby.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "counter-strike-go",
+    "title": "Counter Strike GO",
+    "iframeUrl": "/games/counter-strike-go.html",
+    "category": "Action"
+  },
+  {
+    "id": "real-flight-simulator",
+    "title": "Real Flight Simulator",
+    "iframeUrl": "/games/real-flight-simulator.html",
+    "category": "Simulation"
+  },
+  {
+    "id": "age-of-war",
+    "title": "Age of War",
+    "iframeUrl": "/games/age-of-war.html",
+    "category": "Strategy"
+  },
+  {
+    "id": "backyard-baseball",
+    "title": "Backyard Baseball",
+    "iframeUrl": "/games/backyard-baseball.html",
+    "category": "Sports"
+  },
+  {
+    "id": "baby-sniper-vietnam",
+    "title": "Baby Sniper in Vietnam",
+    "iframeUrl": "/games/baby-sniper-vietnam.html",
+    "category": "Action"
+  },
+  {
+    "id": "bacon-may-die",
+    "title": "Bacon May Die",
+    "iframeUrl": "/games/bacon-may-die.html",
+    "category": "Action"
+  },
+  {
+    "id": "baldis-basics",
+    "title": "Baldi's Basics",
+    "iframeUrl": "/games/baldis-basics.html",
+    "category": "Horror"
+  },
+  {
+    "id": "snow-rider",
+    "title": "Snow Rider",
+    "iframeUrl": "/games/snow-rider.html",
+    "category": "Sports"
+  },
+  {
+    "id": "super-mario-64",
+    "title": "Super Mario 64",
+    "iframeUrl": "/games/super-mario-64.html",
+    "category": "Retro"
+  },
+  {
+    "id": "haunted-school",
+    "title": "Haunted School",
+    "iframeUrl": "/games/haunted-school.html",
+    "category": "Horror"
+  },
+  {
+    "id": "climb-for-brainrots",
+    "title": "Climb for Brainrots",
+    "iframeUrl": "/games/climb-for-brainrots.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "bike-obby",
+    "title": "Bike Obby",
+    "iframeUrl": "/games/bike-obby.html",
+    "category": "Sports"
+  },
+  {
+    "id": "only-up",
+    "title": "Only Up!",
+    "iframeUrl": "/games/only-up.html",
+    "category": "Arcade"
+  },
+  {
+    "id": "super-mario-bros",
+    "title": "Super Mario Bros",
+    "iframeUrl": "/games/super-mario-bros.html",
+    "category": "Retro"
+  },
+  {
+    "id": "taco-stand",
+    "title": "Taco Stand",
+    "iframeUrl": "/games/taco-stand.html",
+    "category": "Simulation"
+  },
+  {
+    "id": "you-vs-100-skibidis",
+    "title": "You vs 100 Skibidis",
+    "iframeUrl": "/games/you-vs-100-skibidis.html",
+    "category": "Action"
+  },
+  {
+    "id": "wheelie-bike",
+    "title": "Wheelie Bike",
+    "iframeUrl": "/games/wheelie-bike.html",
+    "category": "Sports"
+  },
+  {
+    "id": "uno",
+    "title": "Uno",
+    "iframeUrl": "/games/uno.html",
+    "category": "Card"
+  },
+  {
+    "id": "temple-run-2",
+    "title": "Temple Run 2",
+    "iframeUrl": "/games/temple-run-2.html",
+    "category": "Action"
+  },
+  {
+    "id": "sword-fight",
+    "title": "Sword fight",
+    "iframeUrl": "/games/sword-fight.html",
+    "category": "Action"
+  }
+]
